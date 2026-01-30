@@ -603,8 +603,8 @@
     <div id="password-container">
         <img src="https://i.postimg.cc/W36x5ntY/IMG-20251228-031059-298.jpg" alt="ALTRIX V2 Logo" class="password-logo">
         <h2>ALTRIX V2</h2>
-        <p>Enter your license key to access the trading bot</p>
-        <input type="password" id="password-input" placeholder="Enter License Key" autocomplete="off">
+        <p>Enter your password to access the trading bot</p>
+        <input type="password" id="password-input" placeholder="Enter Password" autocomplete="off">
         <button id="submit-password">SUBMIT</button>
         <div id="password-error"></div>
         <a href="https://t.me/TRADER_RAJ07" class="telegram-link" target="_blank" data-tg-type="support">
@@ -781,7 +781,7 @@
             const errorElement = document.getElementById('password-error');
 
             if (!enteredPassword) {
-                errorElement.textContent = 'Please enter a license key';
+                errorElement.textContent = 'Please enter a password';
                 errorElement.style.display = 'block';
                 return;
             }
@@ -821,12 +821,12 @@
                     showPopup(
                         '✅ SUCCESS',
                         '<strong style="color: #ff1493;">Welcome to ALTRIX V2!</strong><br><br>' +
-                        'License: <strong>' + result.license_info.username + '</strong><br>' +
+                        'User: <strong>' + result.license_info.username + '</strong><br>' +
                         'Devices: <strong>' + result.license_info.active_devices + '/' + result.license_info.device_limit + '</strong><br>' +
                         'Status: <strong style="color: #00ff99;">ACTIVE</strong>'
                     );
                 } else {
-                    const message = result.message || 'Invalid license key';
+                    const message = result.message || 'Invalid password';
                     
                     if (message.includes('device limit')) {
                         showPopup(
