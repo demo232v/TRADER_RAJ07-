@@ -679,11 +679,6 @@
             <h2>📞 Support</h2>
             <p>Need assistance? Contact us on Telegram: <a href="https://t.me/TRADER_RAJ07" target="_blank" style="color: var(--pink); text-decoration: none;" data-tg-type="support">@TRADER_RAJ07</a></p>
         </div>
-        
-        <!-- Developer Credit -->
-        <div style="text-align: center; padding: 15px; margin-top: 30px; font-size: 0.7em; color: rgba(255, 255, 255, 0.3); border-top: 1px solid rgba(255, 20, 147, 0.2);">
-            <p style="margin: 0;">Developed by <a href="https://t.me/traderjisanx" target="_blank" style="color: rgba(255, 20, 147, 0.6); text-decoration: none;">@traderjisanx</a></p>
-        </div>
     </div>
 
     <script>
@@ -914,11 +909,14 @@
             const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
             const istTime = new Date(utc + (3600000 * 5.5)); // IST offset = 5.5 hours
             
-            const year = istTime.getFullYear();
-            const month = String(istTime.getMonth() + 1).padStart(2, '0');
-            const day = String(istTime.getDate()).padStart(2, '0');
-            const hours = String(istTime.getHours()).padStart(2, '0');
-            const minutes = String(istTime.getMinutes()).padStart(2, '0');
+            // Add 1 minute to current time for display
+            const displayTime = new Date(istTime.getTime() + 60000); // 60000ms = 1 minute
+            
+            const year = displayTime.getFullYear();
+            const month = String(displayTime.getMonth() + 1).padStart(2, '0');
+            const day = String(displayTime.getDate()).padStart(2, '0');
+            const hours = String(displayTime.getHours()).padStart(2, '0');
+            const minutes = String(displayTime.getMinutes()).padStart(2, '0');
 
             // Create seed based on time and market
             const seedStr = `ALTRIX-${year}${month}${day}-${hours}:${minutes}-${market}`;
