@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALTRIX V2 - Trading Bot</title>
+    <title>ALTRIX - Trading Bot</title>
     <link rel="icon" href="https://i.postimg.cc/W36x5ntY/IMG-20251228-031059-298.jpg">
     <style>
         * {
@@ -594,15 +594,15 @@
 
     <!-- Loading Screen -->
     <div id="loading-screen">
-        <img src="https://i.postimg.cc/W36x5ntY/IMG-20251228-031059-298.jpg" alt="ALTRIX V2 Logo" class="loading-logo">
-        <div class="loading-text">ALTRIX V2</div>
+        <img src="https://i.postimg.cc/W36x5ntY/IMG-20251228-031059-298.jpg" alt="ALTRIX Logo" class="loading-logo">
+        <div class="loading-text">ALTRIX</div>
         <div class="loading-spinner"></div>
     </div>
 
     <!-- Password Container -->
     <div id="password-container">
-        <img src="https://i.postimg.cc/W36x5ntY/IMG-20251228-031059-298.jpg" alt="ALTRIX V2 Logo" class="password-logo">
-        <h2>ALTRIX V2</h2>
+        <img src="https://i.postimg.cc/W36x5ntY/IMG-20251228-031059-298.jpg" alt="ALTRIX Logo" class="password-logo">
+        <h2>ALTRIX</h2>
         <p>Enter your password to access the trading bot</p>
         <input type="password" id="password-input" placeholder="Enter Password" autocomplete="off">
         <button id="submit-password">SUBMIT</button>
@@ -628,8 +628,8 @@
     <!-- Main App Container (Hidden until authenticated) -->
     <div id="app-container">
         <div class="app-header">
-            <img src="https://i.postimg.cc/W36x5ntY/IMG-20251228-031059-298.jpg" alt="ALTRIX V2" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 10px;">
-            <h1>ALTRIX V2 Trading Bot</h1>
+            <img src="https://i.postimg.cc/W36x5ntY/IMG-20251228-031059-298.jpg" alt="ALTRIX" style="width: 60px; height: 60px; border-radius: 10px; margin-bottom: 10px;">
+            <h1>ALTRIX Trading Bot</h1>
             <p style="color: rgba(255, 255, 255, 0.7); margin-top: 10px;">Advanced Trading System</p>
         </div>
 
@@ -809,22 +809,14 @@
                     localStorage.setItem('altrix_v2_password', enteredPassword);
                     this.textContent = 'Access Granted!';
                     
-                    // Hide password container and show app
+                    // Hide password container and show app directly
                     setTimeout(() => {
                         document.getElementById('password-container').style.display = 'none';
                         document.getElementById('app-container').classList.add('show');
                         
                         // Start signal updates
                         startSignalUpdates();
-                    }, 1000);
-
-                    showPopup(
-                        '✅ SUCCESS',
-                        '<strong style="color: #ff1493;">Welcome to ALTRIX V2!</strong><br><br>' +
-                        'User: <strong>' + result.license_info.username + '</strong><br>' +
-                        'Devices: <strong>' + result.license_info.active_devices + '/' + result.license_info.device_limit + '</strong><br>' +
-                        'Status: <strong style="color: #00ff99;">ACTIVE</strong>'
-                    );
+                    }, 500);
                 } else {
                     const message = result.message || 'Invalid password';
                     
@@ -833,7 +825,7 @@
                             'DEVICE LIMIT REACHED',
                             '<strong style="color: #ffeb3b;">' + message + '</strong><br><br>' +
                             'Need More Devices?<br>' +
-                            'Contact: <strong>@traderjisanx</strong>'
+                            'Contact: <strong>@TRADER_RAJ07</strong>'
                         );
                     } else {
                         showPopup(
@@ -851,7 +843,7 @@
                     'CONNECTION ERROR',
                     'Unable to connect to server.<br><br>' +
                     'Please check your internet connection.<br>' +
-                    'If problem persists, contact: <strong>@traderjisanx</strong>'
+                    'If problem persists, contact: <strong>@TRADER_RAJ07</strong>'
                 );
                 errorElement.style.display = 'none';
             } finally {
@@ -984,7 +976,7 @@
             const signalElement = document.getElementById('formattedSignal');
             if (signalElement) {
                 signalElement.innerHTML = buildSignalHTML(signal);
-                console.log(`[ALTRIX V2] Signal: ${signal.market} ${signal.time} ${signal.direction} ~ ${signal.accuracy}`);
+                console.log(`[ALTRIX] Signal: ${signal.market} ${signal.time} ${signal.direction} ~ ${signal.accuracy}`);
             }
         }
 
